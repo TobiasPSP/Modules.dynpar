@@ -80,7 +80,7 @@ Hm. But what if you wanted to show parameters based on what the user has already
 
 *Dynamic* parameters are fully controllable at *runtime*, so you can (by code) choose to show parameters based on what a user already submitted to another parameter. You can show or hide dynamic parameters also based on other runtime conditions such as whether the user currently has admin privileges, or whatever else you need.
 
-The flipside is that in order to be so flexible, *dynamic* parameeters can't be declared like their *static* counterparts. They need to be programmed and fiddle with a vast number of non-intuitive types.
+The flipside is that in order to be so flexible, *dynamic* parameters can't be declared like their *static* counterparts. They need to be programmed and fiddle with a vast number of non-intuitive types.
 
 The module **DynamicParam** changes this and makes creating *dynamic* parameters just as easy as it is to create *static* parameters.
 
