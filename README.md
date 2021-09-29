@@ -496,7 +496,7 @@ function Start-Test
 
 All *you* need to do is run the function, then play with your parameters. 
 
-As you see, the newly created function `Start-Test` at first exposes only a few parameters. Once you add more information at *design time*, the appropriate extra parameters appear because they are *dynamically* added via the code in the *dynamicparam* block.
+As you see, the newly created function `Start-Test` at first exposes only a few parameters. Once you add more information at *runtime*, extra parameters appear because they are *dynamically* added via the code in the *dynamicparam* block.
 
 If any of the parameters won't behave the way you need it to yet, simply go back to your declarative `param()` block and fiddle with your `[Dynamic()]` declarations, then run the `param()` block through `Get-PsoDynamicParameterDefinition` again, and continue testing.
 
