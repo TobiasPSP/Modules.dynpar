@@ -510,7 +510,7 @@ When you look at the result code, you can now better understand how PowerShell i
 * Whenever you use a *dynamicparam* section, you **must** place your own code into one of the blocks *begin*, *process*, and/or *end*. Code now cannot just be placed directly into a function body. These three blocks are important only for pipeline support. If your function does not need to support pipeline input, simply use the *end* block and remove the other two.
 * Dynamic parameter values (the arguments the user assigned to them) aren't automatically exposed as variables. They only surface in `$PSBoundParameters[]`. The generated code automatically fixes this and assigns the appropriate variables.
 
-As a final note, the module **dynpar** simply helps you compose the PowerShell function body you need to suuport your dynamic parameters. Once this code is generated, it runs on its own and has no dependencies to my module. 
+As a final note, the module **dynpar** simply helps you compose the PowerShell function body you need to suport your dynamic parameters. Once this code is generated, it runs on its own and has no dependencies to my module. 
 
 ## Conclusions
 
@@ -518,3 +518,4 @@ It is so much easier to create dynamic parameters with `[Dynamic()]` in a declar
 
 So I keep my fingers crossed that one day, PowerShell natively supports this attribute and automatically translates the `param()` block accordingly so using dynamic parameters would really just be a matter of adding this attribute, shielding our eyes from the ugly complexity of *dynamicparam* code.
 
+Meanwhile, the module generates the complex code for your dynamic parameters. 
