@@ -82,7 +82,7 @@ Hm. But what if you wanted to show parameters based on what the user has already
 
 The flipside is that in order to be so flexible, *dynamic* parameters can't be declared like their *static* counterparts. They need to be programmed and fiddle with a vast number of non-intuitive types.
 
-The module **DynamicParam** changes this and makes creating *dynamic* parameters just as easy as it is to create *static* parameters.
+The module **dynpar** changes this and makes creating *dynamic* parameters just as easy as it is to create *static* parameters.
 
 The best way to understand how that works is by following a simple tutorial:
 
@@ -146,7 +146,7 @@ Why not stick to the easy declarative syntax in `param()`? After all, to support
 * Which parameter(s) should be dynamic?
 * What is the condition that needs to be met to show the parameter?
 
-So when you import the module *DynamicParam*, you get a new attribute called `[DynamicParam()]` that you can use to declare dynamic parameters. Do not import the module or do anything yet, just follow me. At the end, you'll see how simple and easy everything is when everything comes together. 
+So when you import the module *dynpar*, you get a new attribute called `[DynamicParam()]` that you can use to declare dynamic parameters. Do not import the module or do anything yet, just follow me. At the end, you'll see how simple and easy everything is when everything comes together. 
 
 So to declare your dynamic parameters with the new `[Dynamic()]` attribute, the `param()` block from above changes to this:
 
@@ -197,7 +197,7 @@ param
 
 Take a look at the multiple instances of `[Dynamic()]` in the code: the attribute takes a scriptblock as argument, and when this scriptblock evaluates to `$true`, the parameter is visible to the user.
 
-You can't simply copy and paste this code into your test function, though, because the attribute `[Dynamic()]` is not part of PowerShell (yet). Instead, take the `param()` definition and run it through `Get-PsoDynamicParameterDefinition`.  This function is also part of the module **DynamicParam** and does the heavy lifting. It takes your simple and easy declarative parameter definition and turns it into a full-blown PowerShell function with the appropriate dynamic parameters in place.
+You can't simply copy and paste this code into your test function, though, because the attribute `[Dynamic()]` is not part of PowerShell (yet). Instead, take the `param()` definition and run it through `Get-PsoDynamicParameterDefinition`.  This function is also part of the module **dynpar** and does the heavy lifting. It takes your simple and easy declarative parameter definition and turns it into a full-blown PowerShell function with the appropriate dynamic parameters in place.
 
 # Your Turn: Follow Me!
 
@@ -205,7 +205,7 @@ Now it's your turn, and we go through above step by step while you run the examp
 
 ## Install Extension
 
-First, download and install the module **DynamicParam** from the PowerShell Gallery like so:
+First, download and install the module **dynpar** from the PowerShell Gallery like so:
 
 ```powershell
 Install-Module -Name dynpar -Scope CurrentUser
@@ -508,7 +508,7 @@ When you look at the result code, you can now better understand how PowerShell i
 * Whenever you use a *dynamicparam* section, you **must** place your own code into one of the blocks *begin*, *process*, and/or *end*. Code now cannot just be placed directly into a function body. These three blocks are important only for pipeline support. If your function does not need to support pipeline input, simply use the *end* block and remove the other two.
 * Dynamic parameter values (the arguments the user assigned to them) aren't automatically exposed as variables. They only surface in `$PSBoundParameters[]`. The generated code automatically fixes this and assigns the appropriate variables.
 
-As a final note, the module simply helps you compose the PowerShell function body you need to suuport your dynamic parameters. Once this code is generated, it runs on its own and has no dependencies to my module. 
+As a final note, the module **dynpar** simply helps you compose the PowerShell function body you need to suuport your dynamic parameters. Once this code is generated, it runs on its own and has no dependencies to my module. 
 
 ## Conclusions
 
