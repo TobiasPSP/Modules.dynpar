@@ -146,7 +146,7 @@ Why not stick to the easy declarative syntax in `param()`? After all, to support
 * Which parameter(s) should be dynamic?
 * What is the condition that needs to be met to show the parameter?
 
-So when you import the module *dynpar*, you get a new attribute called `[DynamicParam()]` that you can use to declare dynamic parameters. Do not import the module or do anything yet, just follow me. At the end, you'll see how simple and easy everything is when everything comes together. 
+So when you import the module *dynpar*, you get a new attribute called `[DynamicParam()]` that you can use to declare dynamic parameters. Do not import the module or do anything just yet. Hang in there and just follow me for a second. At the end, you'll see how simple and easy everything is when all comes together. 
 
 So to declare your dynamic parameters with the new `[Dynamic()]` attribute, the `param()` block from above changes to this:
 
