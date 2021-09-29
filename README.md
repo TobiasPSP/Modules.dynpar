@@ -10,7 +10,7 @@ The latest module version can also be found in the *PowerShell Gallery*: https:/
 
 To understand advanced *dynamic* parameters, let's quickly rehearse their simple counterparts: *static* parameters.
 
-PowerShell supports *static* parameters via its declarative `param()` structure, and it is very straight-forward to define parameters. You can even define mutually exclusive parameters by assigning different parameterset names:
+PowerShell supports *static* parameters via its declarative `param()` structure, and it is very straight-forward to define parameters. You can even define fairly advanced logic such as mutually exclusive parameters (which work a little bit like overloads in classic programming) by assigning different parameterset names:
 
 ```powershell
 function Start-Test
