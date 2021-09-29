@@ -52,9 +52,9 @@ PS> Start-Test "Hello"
 Your text: Hello
 ```
 
-That's pretty cool and relatively simple to implement. 
+That's pretty cool and relatively simple to implement. However implementation is *static*: you have defined parameters at design time (when you wrote the code) so the behavior of your parameters will now be always indentical.
 
-But what if you want to show parameters based on what the user has already submitted to other parameters, or need more control in other aspects?
+Hm. But what if you wanted to show parameters based on what the user has already submitted to other parameters? What if a parameter should only be present when the user has Admin privileges? So what if you need more control during *runtime*?
 
 ## Dynamic Parameters (Created at Runtime)
 
