@@ -148,7 +148,7 @@ Why not stick to the easy declarative syntax in `param()`? After all, to support
 
 So when you import the module *dynpar*, you get a new attribute called `[DynamicParam()]` that you can use to declare dynamic parameters. Do not import the module or do anything just yet. Hang in there and just follow me for a second. At the end, you'll see how simple and easy everything is when all comes together. 
 
-So to declare your dynamic parameters with the new `[Dynamic()]` attribute, the `param()` block from above changes to this:
+To declare dynamic parameters with the new `[Dynamic()]` attribute, the `param()` block from above changes to this:
 
 ```powershell
 param
@@ -196,6 +196,8 @@ param
 ```
 
 Take a look at the multiple instances of `[Dynamic()]` in the code: the attribute takes a scriptblock as argument, and when this scriptblock evaluates to `$true`, the parameter is visible to the user.
+
+If you want a dynamic parameter to show in relation to another parameter, for example, use `$PSBoundParameters[]` (which holds all parameters submitted to a function) and check whether the parameter or parameter value was already submitted that you are after. You are not required to use `$PSBoundParameters[]`, though. Anything that evaluates to `$true` or `$false` is ok as you can see in above example when looking at the parameter `-Lunch`: it shows only at 11 a.m. or later.
 
 You can't simply copy and paste this code into your test function, though, because the attribute `[Dynamic()]` is not part of PowerShell (yet). Instead, take the `param()` definition and run it through `Get-PsoDynamicParameterDefinition`.  This function is also part of the module **dynpar** and does the heavy lifting. It takes your simple and easy declarative parameter definition and turns it into a full-blown PowerShell function with the appropriate dynamic parameters in place.
 
