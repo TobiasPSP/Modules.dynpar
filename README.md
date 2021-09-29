@@ -1,5 +1,10 @@
 # Creating Dynamic Parameters (Easily)
 
+This is the home of the PowerShell module **dynpar** which allows you to easily create dynamic parameters. Below you learn what dynamic parameters are, and how to use **dynpar**.
+
+The latest module version can also be found in the *PowerShell Gallery*: https://www.powershellgallery.com/packages/dynpar/
+
+
 To understand advanced *dynamic* parameters, let's quickly rehearse the simple *static* parameters:
 
 ## Built-In Static Parameters Respond to Design Time Conditions
