@@ -6,7 +6,7 @@ The latest module version can also be found in the *PowerShell Gallery*: https:/
 
 
 
-## Built-In Static Parameters Respond to Design Time Conditions
+## Built-In Static Parameters (Created at Design Time)
 
 To understand advanced *dynamic* parameters, let's quickly rehearse the simple *static* parameters.
 
@@ -54,7 +54,7 @@ That's pretty cool and relatively simple to implement.
 
 But what if you want to show parameters based on what the user has already submitted to other parameters, or need more control in other aspects?
 
-## Dynamic Parameters respond to RunTime Conditions
+## Dynamic Parameters (Created at Runtime)
 
 *Dynamic* parameters are fully controllable at *runtime*, so you can (by code) choose to show parameters based on what a user already submitted to another parameter. You can show or hide dynamic parameters also based on other runtime conditions such as whether the user currently has admin privileges, or whatever else you need.
 
