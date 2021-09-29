@@ -8,7 +8,7 @@ The latest module version can also be found in the *PowerShell Gallery*: https:/
 
 ## Built-In Static Parameters (Created at Design Time)
 
-To understand advanced *dynamic* parameters, let's quickly rehearse the simple *static* parameters.
+To understand advanced *dynamic* parameters, let's quickly rehearse their simple counterparts: *static* parameters.
 
 PowerShell supports *static* parameters via its declarative `param()` structure, and it is very straight-forward to define parameters. You can even define mutually exclusive parameters by assigning different parameterset names:
 
