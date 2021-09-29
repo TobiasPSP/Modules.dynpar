@@ -1,10 +1,32 @@
 # Creating Dynamic Parameters (Easily)
 
-This is the home of the PowerShell module **dynpar** which allows you to easily create dynamic parameters. In below sections you learn what dynamic parameters are, and how to use **dynpar**.
+This is the home of the PowerShell module **dynpar** which allows you to easily create dynamic parameters. The latest module version can also be found in the *PowerShell Gallery*: https://www.powershellgallery.com/packages/dynpar/
 
-The latest module version can also be found in the *PowerShell Gallery*: https://www.powershellgallery.com/packages/dynpar/
+In short, with **dynpar** you can decorate any parameter in your *regular* parameter declaration and make it dynamic, so it will only appear if the condition is met that you submitted to **[Dynamic()]**:
 
+```powershell
+param
+(
+    # regular static parameter
+    [string]
+    $Normal,
+        
+    # show -Lunch only at 11 a.m. or later
+    [Dynamic({(Get-Date).Hour -ge 11})]
+    [switch]
+    $Lunch,
+        
+    # show -Mount only when -Path refers to a local path (and not a UNC path)
+    [string]
+    $Path,
+        
+    [Dynamic({$PSBoundParameters['Path'] -match '^[a-z]:'})]
+    [switch]
+    $Mount
+)
+```
 
+The sections below walk you through the new functionality:
 
 ## Built-In Static Parameters (Created at Design Time)
 
