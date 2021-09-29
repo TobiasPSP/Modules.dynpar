@@ -30,9 +30,7 @@ The sections below walk you through the new functionality:
 
 ## Built-In Static Parameters (Created at Design Time)
 
-To understand advanced *dynamic* parameters, let's quickly rehearse their simple counterparts: *static* parameters.
-
-PowerShell supports *static* parameters via its declarative `param()` structure, and it is very straight-forward to define parameters. 
+To understand advanced *dynamic* parameters, let's quickly rehearse their simple counterparts: *static* parameters. PowerShell supports *static* parameters via its declarative `param()` structure, and it is very straight-forward to define parameters. 
 
 You can even define fairly advanced logic such as mutually exclusive parameters (which work a little bit like overloads in classic programming) by assigning different parameterset names:
 
